@@ -444,4 +444,7 @@
     <string name="sysui_colors_active_title">Colored SystemUI</string>
     <string name="sysui_colors_active_summary">Wallpaper colored scrims and QS</string>
 
+    <!-- Lock screen media blur -->
+    <string name="lockscreen_media_blur_title">Media artwork blur level</string>
+
 </resources>
