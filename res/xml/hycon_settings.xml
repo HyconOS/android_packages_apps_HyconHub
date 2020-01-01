@@ -19,6 +19,15 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/hycon_settings_title" >
 
+        <!-- Themes -->
+        <Preference
+            android:key="themes_settings"
+            android:title="@string/themes_title"
+            android:summary="@string/themes_summary"
+            android:fragment="com.hycon.settings.Themes"
+	    android:layout="@layout/preference_hyconhub_themes"
+	    />
+
         <!-- Statusbar -->
         <Preference
             android:id="@+id/statusbar"

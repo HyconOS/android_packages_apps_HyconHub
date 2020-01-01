@@ -35,6 +35,9 @@
     <string name="lockscreen_title">Lockscreen</string>
     <string name="notifications_title">Notifications</string>
     <string name="miscellaneous_title">Miscellaneous</string>
+    <string name="themes_title">Themes</string>
+    <string name="dark_ui_mode_summary">Its all dark here</string>
+    <string name="themes_summary">Personalize your device appearance</string>
 
     <!-- Double Tap gestures -->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lockscreen</string>
@@ -158,5 +161,16 @@
     <!-- QS Tint -->
     <string name="qs_bg_use_new_tint">New tint style</string>
     <string name="qs_bg_use_new_tint_summary">Enable the new QS tint style (Requires reboot)</string>
+
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the settings category for theme overlays. -->
+    <string name="theme_customization_category">Theming</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize accent color. -->
+    <string name="theme_customization_accent_color_title">Accent color</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize headline and body fonts. -->
+    <string name="theme_customization_font_title">Headline / Body font</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the adaptive icon shape (e.g. launcher and quick settings icons). -->
+    <string name="theme_customization_icon_shape_title">Icon shape</string>
+    <!-- [CHAR_LIMIT=NONE] Developer Settings: Title of the setting which enables overlays to customize the statusbar icon -->
+    <string name="theme_customization_sysui_icon_title">Status bar icon style</string>
 
 </resources>
