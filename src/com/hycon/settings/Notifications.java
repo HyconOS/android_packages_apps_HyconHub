@@ -45,6 +45,10 @@ import java.util.List;
 @SearchIndexable
 public class Notifications extends SettingsPreferenceFragment {
 
+    private Preference mAlertSlider;
+
+    private static final String ALERT_SLIDER_PREF = "alert_slider_notifications";
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -52,6 +56,14 @@ public class Notifications extends SettingsPreferenceFragment {
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+
+        mAlertSlider = (Preference) prefScreen.findPreference(ALERT_SLIDER_PREF);
+        boolean mAlertSliderAvailable = res.getBoolean(
+                com.android.internal.R.bool.config_hasAlertSlider);
+        if (!mAlertSliderAvailable)
+            prefScreen.removePreference(mAlertSlider);
+
+
     }
 
     @Override
@@ -72,6 +84,11 @@ public class Notifications extends SettingsPreferenceFragment {
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
+                    final Resources res = context.getResources();
+                    boolean mAlertSliderAvailable = res.getBoolean(
+                            com.android.internal.R.bool.config_hasAlertSlider);
+                    if (!mAlertSliderAvailable)
+                        keys.add(ALERT_SLIDER_PREF);
                     return keys;
                 }
             };
