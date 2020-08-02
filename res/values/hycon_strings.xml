@@ -369,6 +369,8 @@
     <string name="pulse_ambient_light_repeat_count_summary">Set max repeat count. 0 for infinite</string>
 
     <!-- Pulse -->
+    <string name="show_ambient_pulse_title">Ambient Pulse</string>
+    <string name="show_ambient_pulse_summary">Audio graphic equalizer on the ambient screen</string>
     <string name="pulse_help_policy_notice_summary">Pulse is a brilliant audio graphic equalizer when music plays on the device</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Audio graphic equalizer for navigation bar and lockscreen</string>
