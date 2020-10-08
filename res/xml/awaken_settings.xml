@@ -43,4 +43,12 @@
 	    android:layout="@layout/preference_awakensettings_buttons"
 	    />
 
+        <!-- Lockscreen -->
+        <Preference
+            android:key="lockscreen_settings"
+            android:title="@string/lockscreen_settings_title"
+            android:fragment="com.awaken.settings.Lockscreen"
+	    android:layout="@layout/preference_awakensettings_lockscreen"
+	    />
+
 </PreferenceScreen>
