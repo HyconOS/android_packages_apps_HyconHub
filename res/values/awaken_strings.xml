@@ -16,9 +16,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- General -->
+    <string name="ok">Okay</string>
+    <string name="default_string">Default</string>
+    <string name="add">Add</string>
+    <string name="enabled">Enabled</string>
+    <string name="choose_app">Choose application</string>
+    <string name="help">Help</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="attention">Attention</string>
+    <string name="reset">Reset</string>
+
     <!-- Awaken Settings -->
     <string name="awaken_settings_title">Awaken Settings</string>
     <string name="statusbar_title">Statusbar</string>
     <string name="quicksettings_title">Quick Settings</string>
+    <string name="button_settings_title">Buttons</string>
 
 </resources>

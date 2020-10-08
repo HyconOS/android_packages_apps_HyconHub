@@ -35,4 +35,12 @@
             android:layout="@layout/preference_awakensettings_quicksettings"
             />
 
+        <!-- Buttons -->
+        <Preference
+            android:key="button_settings"
+            android:title="@string/button_settings_title"
+            android:fragment="com.awaken.settings.ButtonSettings"
+	    android:layout="@layout/preference_awakensettings_buttons"
+	    />
+
 </PreferenceScreen>
