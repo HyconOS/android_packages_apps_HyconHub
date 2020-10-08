@@ -43,10 +43,18 @@
 	    android:layout="@layout/preference_hyconhub_buttons"
 	    />
 
+        <!-- Notifications -->
+        <Preference
+            android:key="notifications_settings"
+            android:title="@string/notifications_title"
+            android:fragment="com.hycon.settings.Notifications"
+	    android:layout="@layout/preference_hyconhub_notifications"
+	    />
+
         <!-- Lockscreen -->
         <Preference
             android:key="lockscreen_settings"
-            android:title="@string/lockscreen_settings_title"
+            android:title="@string/lockscreen_title"
             android:fragment="com.hycon.settings.Lockscreen"
 	    android:layout="@layout/preference_hyconhub_lockscreen"
 	    />
