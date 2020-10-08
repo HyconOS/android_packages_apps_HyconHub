@@ -19,4 +19,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/awaken_settings_title" >
 
+        <!-- Statusbar -->
+        <Preference
+            android:id="@+id/statusbar"
+            android:title="@string/statusbar_title"
+            android:fragment="com.awaken.settings.Statusbar"
+            android:layout="@layout/preference_awakensettings_statusbar"
+            />
+
 </PreferenceScreen>
