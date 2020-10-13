@@ -59,4 +59,12 @@
 	    android:layout="@layout/preference_hyconhub_lockscreen"
 	    />
 
+        <!-- Miscellaneous -->
+        <Preference
+            android:key="miscellaneous_settings"
+            android:title="@string/miscellaneous_title"
+            android:fragment="com.hycon.settings.Miscellaneous"
+	    android:layout="@layout/preference_hyconhub_miscellaneous"
+	    />
+
 </PreferenceScreen>
