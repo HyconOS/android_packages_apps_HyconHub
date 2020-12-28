@@ -350,6 +350,93 @@
             android:layout_margin="@dimen/fod_picker_item_margin"
             android:background="@drawable/fod_picker_item_background"/>
 
+        <ImageButton
+            android:id="@+id/fodicon26_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_heisinbug"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/fodicon27_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_iron_man"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+        <ImageButton
+            android:id="@+id/fodicon28_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_spiderman"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+        <ImageButton
+            android:id="@+id/fodicon29_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_thanos"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/fodicon30_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_captain"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+        <ImageButton
+            android:id="@+id/fodicon31_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_batman"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+        <ImageButton
+            android:id="@+id/fodicon32_button"
+            android:layout_width="@dimen/fod_picker_item_size"
+            android:layout_height="@dimen/fod_picker_item_size"
+            android:src="@drawable/fod_icon_thor"
+            android:scaleType="centerInside"
+            android:padding="@dimen/fod_picker_item_padding"
+            android:layout_margin="@dimen/fod_picker_item_margin"
+            android:background="@drawable/fod_picker_item_background"/>
+
+    </LinearLayout>
+    
 </LinearLayout>
