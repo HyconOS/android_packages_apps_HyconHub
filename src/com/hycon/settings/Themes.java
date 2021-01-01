@@ -40,10 +40,11 @@ import com.hycon.settings.display.QsTileStylePreferenceController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
-public class ThemeSettings extends DashboardFragment {
-    public static final String TAG = "ThemeSettings";
+public class Themes extends DashboardFragment {
+    public static final String TAG = "Themes";
 
     @Override
     public int getMetricsCategory() {
@@ -89,23 +90,19 @@ public class ThemeSettings extends DashboardFragment {
      * For Search.
      */
 
-    public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
+    public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider() {
-
                 @Override
-                public List<SearchIndexableResource> getXmlResourcesToIndex(Context context,
-                        boolean enabled) {
-                    ArrayList<SearchIndexableResource> result =
-                            new ArrayList<SearchIndexableResource>();
-                    SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.themes;
-                    result.add(sir);
-                    return result;
+                public List<SearchIndexableResource> getXmlResourcesToIndex(
+                        Context context, boolean enabled) {
+                    final SearchIndexableResource sir = new SearchIndexableResource(context);
+                    sir.xmlResId = R.xml.notifications;
+                    return Arrays.asList(sir);
                 }
 
                 @Override
                 public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
+                    final List<String> keys = super.getNonIndexableKeys(context);
                     return keys;
                 }
             };
