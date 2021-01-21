@@ -27,8 +27,8 @@
     <string name="attention">Attention</string>
     <string name="reset">Reset</string>
 
-    <!-- Awaken Settings -->
-    <string name="awaken_settings_title">Awaken Settings</string>
+    <!-- Hycon Settings -->
+    <string name="hycon_settings_title">Hycon Hub</string>
     <string name="statusbar_title">Statusbar</string>
     <string name="quicksettings_title">Quick Settings</string>
     <string name="button_settings_title">Buttons</string>

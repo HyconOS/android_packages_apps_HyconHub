@@ -17,38 +17,38 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/awaken_settings_title" >
+    android:title="@string/hycon_settings_title" >
 
         <!-- Statusbar -->
         <Preference
             android:id="@+id/statusbar"
             android:title="@string/statusbar_title"
-            android:fragment="com.awaken.settings.Statusbar"
-            android:layout="@layout/preference_awakensettings_statusbar"
+            android:fragment="com.hycon.settings.Statusbar"
+            android:layout="@layout/preference_hyconhub_statusbar"
             />
 
         <!-- Quick Settings -->
         <Preference
             android:id="@+id/quick_settings"
             android:title="@string/quicksettings_title"
-            android:fragment="com.awaken.settings.QuickSettings"
-            android:layout="@layout/preference_awakensettings_quicksettings"
+            android:fragment="com.hycon.settings.QuickSettings"
+            android:layout="@layout/preference_hyconhub_quicksettings"
             />
 
         <!-- Buttons -->
         <Preference
             android:key="button_settings"
             android:title="@string/button_settings_title"
-            android:fragment="com.awaken.settings.ButtonSettings"
-	    android:layout="@layout/preference_awakensettings_buttons"
+            android:fragment="com.hycon.settings.ButtonSettings"
+	    android:layout="@layout/preference_hyconhub_buttons"
 	    />
 
         <!-- Lockscreen -->
         <Preference
             android:key="lockscreen_settings"
             android:title="@string/lockscreen_settings_title"
-            android:fragment="com.awaken.settings.Lockscreen"
-	    android:layout="@layout/preference_awakensettings_lockscreen"
+            android:fragment="com.hycon.settings.Lockscreen"
+	    android:layout="@layout/preference_hyconhub_lockscreen"
 	    />
 
 </PreferenceScreen>

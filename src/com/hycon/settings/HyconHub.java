@@ -13,23 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.awaken.settings;
+package com.hycon.settings;
 
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.UserHandle;
-import android.provider.Settings;
 import android.provider.SearchIndexableResource;
 
-import androidx.preference.PreferenceCategory;
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
-import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.SwitchPreference;
 
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -43,20 +35,17 @@ import java.util.Arrays;
 import java.util.List;
 
 @SearchIndexable
-public class Lockscreen extends SettingsPreferenceFragment {
+public class HyconHub extends SettingsPreferenceFragment { 
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
-        addPreferencesFromResource(R.xml.lockscreen);
-        PreferenceScreen prefSet = getPreferenceScreen();
-        final Resources res = getResources();
-        final PreferenceScreen prefScreen = getPreferenceScreen();
+        addPreferencesFromResource(R.xml.hycon_settings);
     }
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.AWAKEN;
+        return MetricsProto.MetricsEvent.CUSTOM_SETTINGS;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
@@ -65,7 +54,7 @@ public class Lockscreen extends SettingsPreferenceFragment {
                 public List<SearchIndexableResource> getXmlResourcesToIndex(
                         Context context, boolean enabled) {
                     final SearchIndexableResource sir = new SearchIndexableResource(context);
-                    sir.xmlResId = R.xml.lockscreen;
+                    sir.xmlResId = R.xml.hycon_settings;
                     return Arrays.asList(sir);
                 }
 
