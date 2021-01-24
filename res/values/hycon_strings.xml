@@ -64,6 +64,7 @@
     <string name="show_network_traffic_down">Download</string>
     <string name="show_network_traffic_all">Both</string>
     <string name="nettraf_font_size">Single net font size</string>
+    <string name="statusbar_icon">Statusbar Icon</string>
 
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Wake device</string>
@@ -87,5 +88,9 @@
     <!-- Roaming indicator icon -->
     <string name="roaming_indicator_icon_title">Roaming indicator</string>
     <string name="roaming_indicator_icon_summary">Display the roaming indicator in signal icon when in roaming mode</string>
+
+    <!-- VoLTE switch -->
+    <string name="volte_switch_title">VoLTE icon</string>
+    <string name="volte_switch_summary">Display VoLTE icon</string>
 
 </resources>

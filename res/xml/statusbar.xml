@@ -33,6 +33,15 @@
         android:summary="@string/show_fourg_icon_summary"
         android:defaultValue="false"/>
 
+    <PreferenceCategory
+            android:title="@string/statusbar_icon">
+	    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        	android:key="show_volte"
+        	android:title="@string/volte_switch_title"
+        	android:summary="@string/volte_switch_summary"
+        	android:defaultValue="true" />
+    </PreferenceCategory>
+
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="data_disabled_icon"
         android:title="@string/data_disabled_icon_title"
