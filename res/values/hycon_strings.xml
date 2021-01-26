@@ -124,4 +124,10 @@
     <string name="allow_signature_fake">Allow signature spoofing</string>
     <string name="allow_signature_fake_summary">Allow apps to bypass security systems by pretending to be a different app</string>
 
+    <!-- QS media player -->
+    <string name="qs_media">QuickSettings Media</string>
+    <string name="qs_media_player_title">Media player</string>
+    <string name="qs_media_player_summary_on">Show media player in QS\nRequires a SystemUI restart</string>
+    <string name="qs_media_player_summary_off">Show media player as a notification\nRequires a SystemUI restart</string>
+
 </resources>

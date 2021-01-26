@@ -16,4 +16,17 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/quicksettings_title" >
 
+    <PreferenceCategory
+        android:title="@string/qs_media">
+
+    <!-- QS media player -->
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="qs_media_player"
+        android:title="@string/qs_media_player_title"
+        android:summaryOn="@string/qs_media_player_summary_on"
+        android:summaryOff="@string/qs_media_player_summary_off"
+        android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
