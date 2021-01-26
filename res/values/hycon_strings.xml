@@ -151,4 +151,8 @@
     <string name="lockscreen_media_art_title">Media art</string>
     <string name="lockscreen_media_art_summary">Toggle visibility of media art</string>
 
+    <!-- Notification headers -->
+    <string name="notification_headers_title">Notification Headers</string>
+    <string name="notification_headers_summary">Show headers in the notification shade\nRequires a SystemUI restart</string>
+
 </resources>
