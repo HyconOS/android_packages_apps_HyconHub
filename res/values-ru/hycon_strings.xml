@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 Project-Awaken
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- General -->
+    <string name="ok">ОК</string>
+    <string name="default_string">По умолчанию</string>
+    <string name="add">Добавить</string>
+    <string name="enabled">Включено</string>
+    <string name="choose_app">Выбрать приложение</string>
+    <string name="help">Помощь</string>
+    <string name="reset_message">Сбросить все записи?</string>
+    <string name="attention">Внимание</string>
+    <string name="reset">Сбросить</string>
+
+    <!-- Hycon Settings -->
+    <string name="statusbar_title">Статус бар</string>
+    <string name="quicksettings_title">Шторка быстрых настроек</string>
+    <string name="button_settings_title">Кнопки</string>
+    <string name="lockscreen_title">Экран блокировки</string>
+    <string name="notifications_title">Уведомления</string>
+    <string name="miscellaneous_title">Прочее</string>
+
+    <!-- Double Tap gestures -->
+    <string name="double_tap_sleep_lockscreen_title">Двойное касание для сна</string>
+    <string name="double_tap_sleep_lockscreen_summary">Дважды коснитесь любой точки экрана на экране блокировки для погружения устройства в сон</string>
+    <string name="double_tap_sleep_gesture_title">Двойное касание по статус бару для сна</string>
+    <string name="double_tap_sleep_gesture_summary">Коснитесь дважды по статус бару дабы погрузить устройство в сон</string>
+
+    <!-- Lockscreen battery info indicator  -->
+    <string name="lockscreen_battery_info_title">Информация о заряде на экране блокировки</string>
+    <string name="lockscreen_battery_info_summary">Отобразить максимальный ток и напряжение, а также температуру батареи во время зарядки на экране блокировки</string>
+
+    <!-- Statusbar net monitor -->
+    <string name="traffic_title">Индикаторы трафика</string>
+    <string name="network_traffic">Трафик сети</string>
+    <string name="network_traffic_state_title">Отобразить сетевой трафик</string>
+    <string name="network_traffic_location">Положение сетевого трафика</string>
+    <string name="traffic_disabled">Отключено</string>
+    <string name="traffic_statusbar">Статус бар</string>
+    <string name="traffic_expanded_statusbar">В раскрытой шторке</string>
+    <string name="network_traffic_autohide_threshold_title">Порог авто-скрытия</string>
+    <string name="network_traffic_arrow">Стрелки трафика</string>
+    <string name="network_traffic_arrow_summary">Показать индикаторы сетевого трафика</string>
+    <string name="network_traffic_type">Выберите тип активности</string>
+    <string name="show_network_traffic_combined">Комбинированный (Загрузка + Выгрузка)</string>
+    <string name="show_network_traffic_dynamic">Динамичный</string>
+    <string name="show_network_traffic_up">Выгрузка</string>
+    <string name="show_network_traffic_down">Загрузка</string>
+    <string name="show_network_traffic_all">Оба</string>
+    <string name="nettraf_font_size">Единый размер шрифта</string>
+    <string name="statusbar_icon">Иконка статус бара</string>
+
+    <!-- Volume rocker wake -->
+    <string name="volume_rocker_wake_title">Пробуждение устройства</string>
+    <string name="volume_rocker_wake_summary">Нажмите на качельки громкости, чтобы пробудить устройство</string>
+
+    <!-- Volume rocker music control -->
+    <string name="volume_rocker_music_controls_title">Контроль воспроизведения</string>
+    <string name="volume_rocker_music_controls_summary">Когда экран отключен, длинное нажатие на одну из кнопок громкости переключит трек</string>
+
+    <string name="use_old_mobiletype_title">Старый значок вида сети</string>
+    <string name="use_old_mobiletype_summary">Использовать маленькие иконки вида сети (нужна перезагрузка)</string>
+
+    <!-- 4G icon -->
+    <string name="show_fourg_icon_title">Значок 4G</string>
+    <string name="show_fourg_icon_summary">Отобразить значок 4G вместо LTE</string>
+
+    <!-- Data disabled icon -->
+    <string name="data_disabled_icon_title">Значок отключенной сети</string>
+    <string name="data_disabled_icon_summary">Отображать крестик возле значка сети когда мобильный интернет отключен</string>
+
+    <!-- Roaming indicator icon -->
+    <string name="roaming_indicator_icon_title">Индикатор роуминга</string>
+    <string name="roaming_indicator_icon_summary">Отображать индикатор роуминга когда он включен</string>
+
+    <!-- VoLTE switch -->
+    <string name="volte_switch_title">Значок VoLTE</string>
+    <string name="volte_switch_summary">Отобразить значок VoLTE</string>
+
+    <string name="volte_icon_style_title">Выбрать значок VoLTE</string>
+    <string name="volte_icon_asus">Значок от ASUS</string>
+    <string name="volte_icon_vo">Толко значок "Vo"</string>
+    <string name="volte_icon_volte">Значок VoLTE</string>
+    <string name="volte_icon_oos">Значок от OxygenOS</string>
+    <string name="volte_icon_hd">Значок HD</string>
+    <string name="volte_icon_hd2">Значок HD CAF</string>
+
+    <!-- VoWiFi icon -->
+    <string name="vowifi_icon_title">Значок VoWiFi</string>
+    <string name="vowifi_icon_enabled">Значок VoWiFi включен</string>
+    <string name="vowifi_icon_disabled">Значок VoWiFi выключен</string>
+    <string name="vowifi_icon_enabled_volte_disabled">VoWiFi вместо значка VoLTE</string>
+    <string name="vowifi_icon_style_title">Стиль значка VoWiFi</string>
+    <string name="vowifi_icon_default">По умолчанию</string>
+    <string name="vowifi_icon_emui">EMUI</string>
+    <string name="vowifi_icon_asus">ASUS</string>
+    <string name="vowifi_icon_oneplus">OxygenOS</string>
+    <string name="vowifi_icon_moto">Motorola</string>
+    <string name="vowifi_icon_simple1">Simple1</string>
+    <string name="vowifi_icon_simple2">Simple2</string>
+    <string name="vowifi_icon_simple3">Simple3</string>
+
+    <!-- Signature Spoofing -->
+    <string name="allow_signature_fake">Разрешить подмену подписи</string>
+    <string name="allow_signature_fake_summary">Разрешает приложениям быть подписанными как другие</string>
+
+    <!-- QS media player -->
+    <string name="qs_media">Мультимеида в шторке</string>
+    <string name="qs_media_player_title">Проигрыватель</string>
+    <string name="qs_media_player_summary_on">Показывать проигрыватель в шторке быстрых настроек\nТребует перезагрузки интерфейса</string>
+    <string name="qs_media_player_summary_off">Показывать проигрыватель как уведомление\nТребует перезагрузки интерфейса</string>
+
+    <!-- Lock Icon -->
+    <string name="lockscreen_lock_icon_title">Значок замка</string>
+    <string name="lockscreen_lock_icon_summary">Показывать значок замка на экране блокировки</string>
+
+    <!-- Show Statusbar on Lockscreen -->
+    <string name="lockscreen_status_bar_title">Статус бар</string>
+    <string name="lockscreen_status_bar_summary"Показывать статус бар на экране блокирвоки</string>
+
+    <string name="notification_sound_vib_screen_on_title">Уведомления при включенном экране</string>
+    <string name="notification_sound_vib_screen_on_summary">Проигрывать уведомления и вибрации только при включенном экране</string>
+
+    <!-- QS Header data uasge -->
+    <string name="qs_datausage_title">Статистика мобильной сети в заголовке шторки</string>
+    <string name="qs_datausage_disabled">Отключена</string>
+    <string name="qs_datausage_daily">Дневеное использование</string>
+    <string name="qs_datausage_monthly">Месячное использование</string>
+
+    <!-- Media art -->
+    <string name="lockscreen_media_art_title">Обложка мультимедиа</string>
+    <string name="lockscreen_media_art_summary">Переключить видимость обложки</string>
+
+    <!-- Notification headers -->
+    <string name="notification_headers_title">Показывать заголовки</string>
+    <string name="notification_headers_summary">Показывать заголовки на панели уведомлений\nНужна перезагрузка интерфейса</string>
+
+    <!-- QS Tint -->
+    <string name="qs_bg_use_new_tint">Новый вид оттенка</string>
+    <string name="qs_bg_use_new_tint_summary">Включить новый вид оттенка (нужна перезагрузка)</string>
+
+</resources>
