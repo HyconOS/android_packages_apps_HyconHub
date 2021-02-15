@@ -29,11 +29,10 @@
 
     </PreferenceCategory>
 
-    <com.android.settings.custom.preference.SystemSettingListPreference
-        android:key="qs_datausage" 
-        android:title="@string/qs_datausage_title"
-        android:entries="@array/qs_datausage_entries"
-        android:entryValues="@array/qs_datausage_values"
-        android:defaultValue="0" />
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="qs_datausage" 
+            android:title="@string/qs_datausage_title" 
+            android:summary="@string/qs_datausage_subtitle" 
+            android:defaultValue="false" />
 
 </PreferenceScreen>
