@@ -58,13 +58,15 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
     private CustomSeekBarPreference mNetTrafficSize;
     private CustomSeekBarPreference mThreshold;
     private SystemSettingSwitchPreference mShowArrows;
+    private static final String SMART_PIXELS = "smart_pixels";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.traffic);
-
+        updateSmartPixelsPreference();
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
 
@@ -175,6 +177,16 @@ public class Traffic extends SettingsPreferenceFragment implements OnPreferenceC
                 break;
             default:
                 break;
+        }
+    }
+        private void updateSmartPixelsPreference() {
+        PreferenceScreen prefSet = getPreferenceScreen();
+        boolean enableSmartPixels = getContext().getResources().
+                getBoolean(com.android.internal.R.bool.config_enableSmartPixels);
+        Preference smartPixels = findPreference(SMART_PIXELS);
+
+        if (!enableSmartPixels){
+            prefSet.removePreference(smartPixels);
         }
     }
 }
