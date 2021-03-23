@@ -76,4 +76,10 @@
 	    android:layout="@layout/preference_hyconhub_miscellaneous"
 	    />
 
+        <Preference
+        android:key="smart_pixels"
+        android:fragment="com.hycon.settings.SmartPixels"
+        android:title="@string/smart_pixels_title"
+        android:summary="@string/smart_pixels_summary" />
+
 </PreferenceScreen>
