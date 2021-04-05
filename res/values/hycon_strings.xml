@@ -38,6 +38,12 @@
     <string name="themes_title">Themes</string>
     <string name="dark_ui_mode_summary">Its all dark here</string>
     <string name="themes_summary">Personalize your device appearance</string>
+    <string name="statusbar_summary">Statusbar icons and more</string>
+    <string name="quick_settings_summary">Media player, QS columns/rows and more</string>
+    <string name="buttons_summary">Playback control, Wake device and more</string>
+    <string name="lockscreen_summary">Media art, Double tap to sleep, charging info and more</string>
+    <string name="notifications_summary">Notifications headers and more</string>
+    <string name="miscellaneous_summary">Signature spoofing</string>
 
     <!-- Double Tap gestures -->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lockscreen</string>
