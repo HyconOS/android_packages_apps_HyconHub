@@ -272,6 +272,7 @@
     <string name="qs_rows_landscape_title">Tiles rows on landscape</string>
     <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
     <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
+
     <!-- FOD animations -->
     <string name="fod_recog_animation">FOD recognizing animation</string>
     <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
@@ -317,4 +318,7 @@
     <string name="fod_pressed_color_green">Green</string>
     <string name="fod_pressed_color_yellow">Yellow</string>
 
+   <!-- FOD stuffs -->
+    <string name="fod_title">FOD Customisations</string>
+    <string name="fod_summary">Customize Your Fingerprint on Display</string>
 </resources>
