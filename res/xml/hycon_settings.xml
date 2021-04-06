@@ -82,4 +82,13 @@
 	    android:layout="@layout/preference_hyconhub_miscellaneous"
 	    />
 
+        <!-- FOD -->
+        <Preference
+            android:key="fod"
+            android:title="@string/fod_title"
+            android:summary="@string/fod_icon_picker_summary"
+            android:fragment="com.hycon.settings.Fod"
+	    android:layout="@layout/preference_hyconhub_fod"
+	    />
+
 </PreferenceScreen>
