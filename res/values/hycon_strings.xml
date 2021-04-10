@@ -321,4 +321,9 @@
    <!-- FOD stuffs -->
     <string name="fod_title">FOD Customisations</string>
     <string name="fod_summary">Customize Your Fingerprint on Display</string>
+
+    <!-- Statusbar brightness control -->
+    <string name="status_bar_brightness_control_title">Statusbar Brightness Control</string>
+    <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across statusbar</string>
+
 </resources>
