@@ -33,10 +33,10 @@
     <string name="notifications_title">Notificaciones</string>
     <string name="miscellaneous_title">Varios</string>
     <string name="themes_title">Temas</string>
-    <string name="dark_ui_mode_summary">Está todo negro aquí</string>
+    <string name="dark_ui_mode_summary">Está todo oscuro aquí</string>
     <string name="themes_summary">Personaliza la apariencia de tu dispositivo</string>
     <string name="statusbar_summary">Iconos de la barra de estado y más</string>
-    <string name="quick_settings_summary">Reproductor multimedia, QS columnas/filas y más</string>
+    <string name="quick_settings_summary">Reproductor multimedia, columnas/filas de QS y más</string>
     <string name="buttons_summary">Control de reproducción, despertar el dispositivo y mas</string>
     <string name="lockscreen_summary">Arte de la multimedia, Doble toque para dormir, información de carga y mas</string>
     <string name="notifications_summary">Encabezados de notificación y más</string>
@@ -148,8 +148,8 @@
     <string name="notification_sound_vib_screen_on_summary">Reproduce sonido y vibración para notificaciones cuando la pantalla está encendida</string>
 
     <!-- Media art -->
-    <string name="lockscreen_media_art_title">Arte multimedia</string>
-    <string name="lockscreen_media_art_summary">Alternar la visibilidad del arte multimedia</string>
+    <string name="lockscreen_media_art_title">Arte de la multimedia</string>
+    <string name="lockscreen_media_art_summary">Alternar la visibilidad del arte de la multimedia</string>
 
     <!-- Notification headers -->
     <string name="notification_headers_title">Encabezado de notificación</string>
@@ -216,7 +216,7 @@
     <string name="static_header_provider" translatable="false">static</string>
     <string name="static_header_provider_title">Imagen estática</string>
     <string name="status_bar_custom_header_shadow_summary">Para una mejor visibilidad en imágenes brillantes</string>
-    <string name="status_bar_custom_header_shadow_title">sombra de la imagen del encabezado</string>
+    <string name="status_bar_custom_header_shadow_title">Sombra de la imagen del encabezado</string>
     <string name="unit_percent">\u0025</string>
 
     <!-- Volume Panel Plugin -->
@@ -281,13 +281,13 @@
     <string name="fod_recog_animation_miui_light">Liviano</string>
     <string name="fod_recog_animation_miui_pop">Pop</string>
     <string name="fod_recog_animation_miui_pulse">Pulso</string>
-    <string name="fod_recog_animation_miui_pulse_white">Pulse (Blanco)</string>
+    <string name="fod_recog_animation_miui_pulse_white">Pulso (Blanco)</string>
     <string name="fod_recog_animation_miui_rhythm">Ritmo</string>
     <string name="fod_recog_animation_miui_star_cas">Luz de Estrella</string>
     <string name="fod_recog_animation_op_cosmos">Cosmos</string>
     <string name="fod_recog_animation_op_energy">Energia</string>
     <string name="fod_recog_animation_op_mclaren">McLaren</string>
-    <string name="fod_recog_animation_op_ripple">onda</string>
+    <string name="fod_recog_animation_op_ripple">Onda</string>
     <string name="fod_recog_animation_op_scanning">Escaneando (Cyberpunk 2077)</string>
     <string name="fod_recog_animation_op_stripe">Raya</string>
     <string name="fod_recog_animation_op_wave">Wave</string>
