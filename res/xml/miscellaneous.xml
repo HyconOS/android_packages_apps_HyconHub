@@ -22,5 +22,14 @@
         android:summary="@string/allow_signature_fake_summary"
         android:defaultValue="false" />
 
-    
+    <PreferenceCategory
+        android:title="@string/pulse_settings" >
+        <!-- Pulse -->
+        <Preference
+             android:key="pulse"
+             android:title="@string/pulse_settings"
+             android:summary="@string/pulse_settings_summary"
+             android:fragment="com.hycon.settings.fragments.PulseSettings" />    
+    </PreferenceCategory>
+
 </PreferenceScreen>
