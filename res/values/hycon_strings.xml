@@ -44,6 +44,7 @@
     <string name="lockscreen_summary">Media art, Double tap to sleep, charging info and more</string>
     <string name="notifications_summary">Notifications headers and more</string>
     <string name="miscellaneous_summary">Signature spoofing</string>
+    <string name="ambient_settings">Ambient Settings</string>
 
     <!-- Double Tap gestures -->
     <string name="double_tap_sleep_lockscreen_title">Double tap to sleep on lockscreen</string>
@@ -318,12 +319,18 @@
     <string name="fod_pressed_color_green">Green</string>
     <string name="fod_pressed_color_yellow">Yellow</string>
 
-   <!-- FOD stuffs -->
+    <!-- FOD stuffs -->
     <string name="fod_title">FOD Customisations</string>
     <string name="fod_summary">Customize Your Fingerprint on Display</string>
 
     <!-- Statusbar brightness control -->
     <string name="status_bar_brightness_control_title">Statusbar Brightness Control</string>
     <string name="status_bar_brightness_control_summary">Adjust brightness by sliding across statusbar</string>
+
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Always on display schedule</string>
+    <string name="always_on_display_schedule_sunset">Sunset</string>
+    <string name="always_on_display_schedule_sunrise">Sunrise</string>
+    <string name="disabled">Disabled</string>
 
 </resources>
