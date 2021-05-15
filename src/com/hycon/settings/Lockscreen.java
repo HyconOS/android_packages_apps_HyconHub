@@ -45,21 +45,22 @@ import java.util.List;
 
 import com.android.settings.custom.preference.SystemSettingSwitchPreference;
 
-import com.android.settings.custom.preference.SystemSettingSeekBarPreference;
+import com.android.settings.custom.preference.CustomSeekBarPreference;
 
 import com.android.settings.custom.colorpicker.ColorPickerPreference;
 
 import com.android.internal.util.custom.CustomUtils;
 
 @SearchIndexable
-public class Lockscreen extends SettingsPreferenceFragment {
+public class Lockscreen extends SettingsPreferenceFragment
+              implements Preference.OnPreferenceChangeListener {
 
     private static final String AOD_SCHEDULE_KEY = "always_on_display_schedule";
     private static final String AMBIENT_ICONS_COLOR = "ambient_icons_color";
     private static final String AMBIENT_ICONS_LOCKSCREEN = "ambient_icons_lockscreen";
     private static final String NOTIFICATION_PULSE_COLOR = "ambient_notification_light_color";
-    private static final String AMBIENT_LIGHT_DURATION = "ambient_light_duration";
-    private static final String AMBIENT_LIGHT_REPEAT_COUNT = "ambient_light_repeat_count";
+    private static final String NOTIFICATION_PULSE_DURATION = "notification_pulse_duration";
+    private static final String NOTIFICATION_PULSE_REPEATS = "notification_pulse_repeats";
     private static final String PULSE_COLOR_MODE_PREF = "ambient_notification_light_color_mode";
     private static final String KEY_AMBIENT = "ambient_notification_light_enabled";
 
@@ -69,11 +70,12 @@ public class Lockscreen extends SettingsPreferenceFragment {
     static final int MODE_MIXED_SUNSET = 3;
     static final int MODE_MIXED_SUNRISE = 4;
 
+    private ContentResolver mResolver;
     private ColorPickerPreference mAmbientIconsColor;
     private SystemSettingSwitchPreference mAmbientIconsLockscreen;
     private ColorPickerPreference mEdgeLightColorPreference;
-    private SystemSettingSeekBarPreference mEdgeLightDurationPreference;
-    private SystemSettingSeekBarPreference mEdgeLightRepeatCountPreference;
+    private CustomSeekBarPreference mEdgeLightDurationPreference;
+    private CustomSeekBarPreference mEdgeLightRepeatCountPreference;
     private ListPreference mColorMode;
     private SystemSettingSwitchPreference mAmbientPref;
 
@@ -86,6 +88,7 @@ public class Lockscreen extends SettingsPreferenceFragment {
         PreferenceScreen prefSet = getPreferenceScreen();
         final Resources res = getResources();
         final PreferenceScreen prefScreen = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
         mAODPref = findPreference(AOD_SCHEDULE_KEY);
         updateAlwaysOnSummary();
         mAmbientIconsLockscreen = (SystemSettingSwitchPreference) findPreference(AMBIENT_ICONS_LOCKSCREEN);
@@ -111,16 +114,16 @@ public class Lockscreen extends SettingsPreferenceFragment {
             mAmbientPref.setSummary(R.string.aod_disabled);
         }
 
-        mEdgeLightRepeatCountPreference = (SystemSettingSeekBarPreference) findPreference(AMBIENT_LIGHT_REPEAT_COUNT);
+        mEdgeLightRepeatCountPreference = (CustomSeekBarPreference) findPreference(NOTIFICATION_PULSE_REPEATS);
         mEdgeLightRepeatCountPreference.setOnPreferenceChangeListener(this);
-        int rCount = Settings.System.getInt(getContentResolver(),
-                Settings.System.AMBIENT_LIGHT_REPEAT_COUNT, 0);
-        mEdgeLightRepeatCountPreference.setValue(rCount);
+        int repeats = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_PULSE_REPEATS, 0);
+        mEdgeLightRepeatCountPreference.setValue(repeats);
 
-        mEdgeLightDurationPreference = (SystemSettingSeekBarPreference) findPreference(AMBIENT_LIGHT_DURATION);
+        mEdgeLightDurationPreference = (CustomSeekBarPreference) findPreference(NOTIFICATION_PULSE_DURATION);
         mEdgeLightDurationPreference.setOnPreferenceChangeListener(this);
         int duration = Settings.System.getInt(getContentResolver(),
-                Settings.System.AMBIENT_LIGHT_DURATION, 2);
+                Settings.System.NOTIFICATION_PULSE_DURATION, 2);
         mEdgeLightDurationPreference.setValue(duration);
 
         mColorMode = (ListPreference) findPreference(PULSE_COLOR_MODE_PREF);
@@ -147,7 +150,7 @@ public class Lockscreen extends SettingsPreferenceFragment {
         mEdgeLightColorPreference.setNewPreviewColor(edgeLightColor);
         mEdgeLightColorPreference.setAlphaSliderEnabled(false);
         String edgeLightColorHex = String.format("#%08x", (0xFF3980FF & edgeLightColor));
-        if (edgeLightColorHex.equals("#ff3980ff")) {
+        if (edgeLightColorHex.equals("#ff1a73e8")) {
             mEdgeLightColorPreference.setSummary(R.string.color_default);
         } else {
             mEdgeLightColorPreference.setSummary(edgeLightColorHex);
@@ -196,7 +199,6 @@ public class Lockscreen extends SettingsPreferenceFragment {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(resolver,
                     Settings.System.AMBIENT_ICONS_LOCKSCREEN, value ? 1 : 0);
-            CustomUtils.showSystemUiRestartDialog(getContext());
             return true;
         } else if (preference == mAmbientIconsColor) {
             String hex = ColorPickerPreference.convertToARGB(Integer
@@ -209,7 +211,7 @@ public class Lockscreen extends SettingsPreferenceFragment {
         } else  if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToARGB(
                     Integer.valueOf(String.valueOf(newValue)));
-            if (hex.equals("#ff3980ff")) {
+            if (hex.equals("#ff1a73e8")) {
                 preference.setSummary(R.string.color_default);
             } else {
                 preference.setSummary(hex);
@@ -221,12 +223,12 @@ public class Lockscreen extends SettingsPreferenceFragment {
         } else if (preference == mEdgeLightRepeatCountPreference) {
                 int value = (Integer) newValue;
                 Settings.System.putInt(getContentResolver(),
-                        Settings.System.AMBIENT_LIGHT_REPEAT_COUNT, value);
+                        Settings.System.NOTIFICATION_PULSE_REPEATS, value);
                 return true;
         } else if (preference == mEdgeLightDurationPreference) {
             int value = (Integer) newValue;
                 Settings.System.putInt(getContentResolver(),
-                    Settings.System.AMBIENT_LIGHT_DURATION, value);
+                    Settings.System.NOTIFICATION_PULSE_DURATION, value);
             return true;
         } else if (preference == mColorMode) {
              int value = Integer.valueOf((String) newValue);
