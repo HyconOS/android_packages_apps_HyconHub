@@ -210,7 +210,7 @@ public class Lockscreen extends SettingsPreferenceFragment
             return true;
         } else  if (preference == mEdgeLightColorPreference) {
             String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(newValue)));
+                    Integer.valueOf(String.valueOf(objValue)));
             if (hex.equals("#ff1a73e8")) {
                 preference.setSummary(R.string.color_default);
             } else {
@@ -221,18 +221,18 @@ public class Lockscreen extends SettingsPreferenceFragment
                     Settings.System.NOTIFICATION_PULSE_COLOR, intHex);
             return true;
         } else if (preference == mEdgeLightRepeatCountPreference) {
-                int value = (Integer) newValue;
+                int value = (Integer) objValue;
                 Settings.System.putInt(getContentResolver(),
                         Settings.System.NOTIFICATION_PULSE_REPEATS, value);
                 return true;
         } else if (preference == mEdgeLightDurationPreference) {
-            int value = (Integer) newValue;
+            int value = (Integer) objValue;
                 Settings.System.putInt(getContentResolver(),
                     Settings.System.NOTIFICATION_PULSE_DURATION, value);
             return true;
         } else if (preference == mColorMode) {
-             int value = Integer.valueOf((String) newValue);
-            int index = mColorMode.findIndexOfValue((String) newValue);
+             int value = Integer.valueOf((String) objValue);
+            int index = mColorMode.findIndexOfValue((String) objValue);
             mColorMode.setSummary(mColorMode.getEntries()[index]);
             if (value == 0) {
                 Settings.System.putInt(getContentResolver(),

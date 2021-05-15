@@ -114,6 +114,12 @@
             android:defaultValue="false"
             android:dependency="ambient_notification_light_enabled"/>
 
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="ambient_light_pulse_for_all"
+            android:title="@string/pulse_ambient_light_show_always_title"
+            android:summary="@string/pulse_ambient_light_show_always_summary"
+            android:defaultValue="false" />
+
         <com.android.settings.custom.preference.SystemSettingListPreference
             android:key="ambient_notification_light_timeout"
             android:dialogTitle="@string/ambient_notification_light_timeout_title"
@@ -137,7 +143,8 @@
             android:summary="@string/ambient_notification_light_color_summary"
             android:title="@string/ambient_notification_light_color_title"
             ledPreview="true"
-            settings:defaultColorValue="0xFF3980FF" />
+            android:defaultValue="0xFF3980FF" 
+            android:dependency="pulse_ambient_light" />
 
         <com.android.settings.custom.preference.CustomSeekBarPreference
             android:key="notification_pulse_duration"
