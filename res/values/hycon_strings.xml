@@ -447,4 +447,7 @@
     <!-- Lock screen media blur -->
     <string name="lockscreen_media_blur_title">Media artwork blur level</string>
 
+    <!-- Lockscreen blur --> <string 
+    name="lockscreen_blur_title">Background blur</string>
+
 </resources>
