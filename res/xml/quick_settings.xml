@@ -29,6 +29,12 @@
 
     </PreferenceCategory>
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="headers_icons_style"
+        android:title="@string/header_icons_style"
+        android:summary="@string/header_icons_style_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:key="qs_columns_rows_category"
         android:title="@string/qs_columns_rows_category_title">
