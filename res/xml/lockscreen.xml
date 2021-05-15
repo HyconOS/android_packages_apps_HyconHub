@@ -65,6 +65,29 @@
         android:title="@string/always_on_display_schedule_title"
         android:fragment="com.hycon.settings.fragments.AODSchedule" />
 
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="ambient_icons_lockscreen"
+            android:title="@string/ambient_icons_lockscreen_title"
+            android:summary="@string/ambient_icons_lockscreen_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.custom.preference.SystemSettingSeekBarPreference
+            android:key="ambient_icons_size"
+            android:title="@string/ambient_icons_size_title"
+            android:dependency="ambient_icons_lockscreen"
+            settings:allowEditText="true"
+            android:max="80"
+            android:min="0"
+            settings:units="dp"
+            settings:interval="1"
+            android:defaultValue="80" />
+
+        <com.android.settings.custom.colorpicker.ColorPickerPreference
+            android:key="ambient_icons_color"
+            android:title="@string/ambient_icons_color_title"
+            android:dependency="ambient_icons_lockscreen"
+            android:defaultValue="0xFFFFFFFF" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
