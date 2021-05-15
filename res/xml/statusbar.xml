@@ -86,4 +86,10 @@
         android:summary="@string/status_bar_brightness_control_summary"
 	android:defaultValue="false"/>
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="statusbar_icons_style"
+        android:title="@string/statusbar_icons_style"
+        android:summary="@string/statusbar_icons_style_summary"
+        android:defaultValue="false" />
+
 </PreferenceScreen>
