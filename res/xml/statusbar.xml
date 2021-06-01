@@ -68,6 +68,14 @@
 
     </PreferenceCategory>
 
+         <Preference
+            android:title="@string/status_bar_system_icons_title"
+            android:summary="@string/status_bar_system_icons_summary">
+            <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui" 
+                android:targetClass="com.android.systemui.tuner.StatusbarItemsActivity" />
+        </Preference>
+
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="data_disabled_icon"
         android:title="@string/data_disabled_icon_title"

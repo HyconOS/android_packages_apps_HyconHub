@@ -411,4 +411,8 @@
     <string name="header_icons_style">Colored Header Icons</string>
     <string name="header_icons_style_summary">Choose the style of your notification headers icons (requires SystemUI restart)</string>
 
+    <!-- Statusbar Tuner -->
+    <string name="status_bar_system_icons_title">System icons</string>
+    <string name="status_bar_system_icons_summary">Control which status bar icons are shown</string>
+
 </resources>
