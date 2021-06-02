@@ -58,6 +58,13 @@
         android:summary="@string/hide_lockicon_summary"
         android:defaultValue="true" />
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="fod_gesture"
+        android:title="@string/fod_gesture_title"
+        android:summary="@string/fod_gesture_summary"
+        android:defaultValue="true"
+        settings:controller="com.hycon.settings.fragments.FodGesturePreferenceController" />
+
     <PreferenceCategory
             android:title="@string/ambient_settings">
     <Preference

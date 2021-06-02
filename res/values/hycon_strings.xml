@@ -276,6 +276,10 @@
     <string name="qs_columns_portrait_title">Tiles columns on portrait</string>
     <string name="qs_columns_landscape_title">Tiles columns on landscape</string>
 
+    <!-- Screen off fod -->
+    <string name="fod_gesture_title">Unlock with fingerprint when the screen is off</string>
+    <string name="fod_gesture_summary">Allows unlocking the device without having to wake up the screen first</string>
+
     <!-- FOD animations -->
     <string name="fod_recog_animation">FOD recognizing animation</string>
     <string name="fod_recog_animation_summary">Shows an animation while reading your finger</string>
