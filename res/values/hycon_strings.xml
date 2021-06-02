@@ -41,9 +41,9 @@
     <string name="statusbar_summary">Statusbar icons and more</string>
     <string name="quick_settings_summary">Media player, QS columns/rows and more</string>
     <string name="buttons_summary">Playback control, Wake device and more</string>
-    <string name="lockscreen_summary">Media art, Double tap to sleep, charging info and more</string>
+    <string name="lockscreen_summary">Media art, Double tap to sleep, Charging info, AOD Settings and more</string>
     <string name="notifications_summary">Notifications headers and more</string>
-    <string name="miscellaneous_summary">Signature spoofing</string>
+    <string name="miscellaneous_summary">Signature spoofing, Pulse and more</string>
     <string name="ambient_settings">Ambient Settings</string>
 
     <!-- Double Tap gestures -->
