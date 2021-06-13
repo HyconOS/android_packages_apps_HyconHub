@@ -105,11 +105,13 @@
             android:summary="@string/qs_bg_use_disco_summary"
             android:defaultValue="false" />
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+    <com.android.settings.custom.preference.SystemSettingListPreference
             android:key="qs_panel_bg_use_new_tint"
-            android:title="@string/qs_bg_use_new_tint"
-            android:summary="@string/qs_bg_use_new_tint_summary"
-            android:defaultValue="false" />
+            android:title="@string/qs_tint_title"
+            android:dialogTitle="@string/qs_tint_title"
+            android:entries="@array/qs_tint_entries"
+            android:entryValues="@array/qs_tint_values"
+            android:defaultValue="0" />
 
     </PreferenceCategory>
 
