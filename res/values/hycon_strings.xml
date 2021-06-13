@@ -164,6 +164,7 @@
     <string name="qs_tint_off">Default</string>
     <string name="qs_tint_accent">Accent color</string>
     <string name="qs_tint_oos">OxygenOS 11</string>
+    <string name="qs_tint_twelve">Android 12</string>
     <string name="qs_bg_use_disco">QS tile disco</string>
     <string name="qs_bg_use_disco_summary">Make your QS Tiles colorful!</string>
 
