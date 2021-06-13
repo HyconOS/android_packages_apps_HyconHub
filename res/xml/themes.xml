@@ -92,6 +92,12 @@
             android:title="@string/custom_header_title"
             android:summary="@string/custom_header_summary" />
 
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="qs_tiles_bg_disco"
+            android:title="@string/qs_panel_bg_disco_title"
+            android:summary="@string/qs_panel_bg_disco_summary"
+            android:defaultValue="false" />
+
         <ListPreference
             android:key="qs_tile_style"
             android:title="@string/qs_tile_style_title"
@@ -99,19 +105,44 @@
             android:entries="@array/qs_selector_entries"
             android:entryValues="@array/qs_selector_values" />
 
-    <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="qs_tiles_bg_disco"
-            android:title="@string/qs_bg_use_disco"
-            android:summary="@string/qs_bg_use_disco_summary"
-            android:defaultValue="false" />
-
-    <com.android.settings.custom.preference.SystemSettingListPreference
+        <com.android.settings.custom.preference.SystemSettingListPreference
             android:key="qs_panel_bg_use_new_tint"
             android:title="@string/qs_tint_title"
             android:dialogTitle="@string/qs_tint_title"
             android:entries="@array/qs_tint_entries"
             android:entryValues="@array/qs_tint_values"
             android:defaultValue="0" />
+
+        <!-- QS panel opacity -->
+        <com.android.settings.custom.preference.SystemSettingSeekBarPreference
+            android:key="qs_panel_bg_alpha"
+            android:title="@string/qs_panel_bg_alpha_title"
+            android:defaultValue="255"
+            android:max="255"
+            android:min="0"
+            settings:units="" />
+
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="qs_panel_bg_use_fw"
+            android:title="@string/qs_panel_bg_use_fw_title"
+            android:summary="@string/qs_panel_bg_use_fw_summary"
+            android:defaultValue="true"
+            android:disableDependentsState="true" />
+
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="sysui_colors_active"
+            android:title="@string/sysui_colors_active_title"
+            android:summary="@string/sysui_colors_active_summary"
+            android:defaultValue="false"
+            android:dependency="qs_panel_bg_use_fw"
+            android:disableDependentsState="true" />
+
+        <com.android.settings.custom.colorpicker.ColorPickerPreference
+            android:key="qs_panel_color"
+            android:title="@string/qs_panel_bg_color_title"
+            android:defaultValue="0xFFFFFFFF"
+            android:persistent="false"
+            android:dependency="sysui_colors_active" />
 
     </PreferenceCategory>
 
