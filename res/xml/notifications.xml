@@ -33,6 +33,11 @@
         android:title="@string/alert_slider_notifications_title"
         android:summary="@string/alert_slider_notifications_summary"
         android:defaultValue="true" />
+        
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="ios_clipboard_enabled"
+        android:title="@string/ios_clipboard_title"
+        android:defaultValue="false"/>
 
     <PreferenceCategory
         android:key="reticker"
@@ -52,7 +57,7 @@
             android:summary="@string/reticker_colored_summary"
             android:order="10"
             android:defaultValue="false" />
-
-    </PreferenceCategory>
+            
+      </PreferenceCategory>
 
 </PreferenceScreen>
