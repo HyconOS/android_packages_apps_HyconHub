@@ -427,5 +427,8 @@
     <!-- Lock icon -->
     <string name="hide_lockicon_title">Hide lock icon</string>
     <string name="hide_lockicon_summary">Hide the lock icon on lockscreen</string>
+    
+    <!-- Ios like clipboard access toast notification -->
+   <string name="ios_clipboard_title">iOS-like toast notification for clipboard access</string>
 
 </resources>
