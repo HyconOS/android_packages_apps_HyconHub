@@ -60,15 +60,15 @@
         settings:units="%"
         settings:interval="5"
         android:defaultValue="100"
-        android:dependency="lockscreen_media_metadata" />
+        android:dependency="lockscreen_media_art" />
 
     <com.android.settings.custom.preference.SystemSettingSeekBarPreference
-        android:key="lockscreen_blur
-        android:title="@string/lockscreen_blur_title
-        android:max="100
+        android:key="lockscreen_blur"
+        android:title="@string/lockscreen_blur_title"
+        android:max="100"
         settings:min="0"
         settings:units="%"
-        settings:interval="5
+        settings:interval="5"
         android:defaultValue="0" />
 
     <com.android.settings.custom.preference.SecureSettingSwitchPreference
