@@ -447,4 +447,8 @@
     <!-- Lockscreen blur --> <string 
     name="lockscreen_blur_title">Background blur</string>
 
+
+    <!-- Heads up options -->
+    <string name="less_boring_heads_up_title">Less boring heads up</string>
+    <string name="less_boring_heads_up_summary">Show heads up only for dialer, messaging and alarm app</string>                   
 </resources>
