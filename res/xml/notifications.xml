@@ -66,4 +66,11 @@
         android:title="@string/less_boring_heads_up_title"
         android:summary="@string/less_boring_heads_up_summary"
         android:defaultValue="false" />
+
+        <com.android.settings.custom.preference.GlobalSettingMasterSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:fragment="com.hycon.settings.fragments.HeadsUp"
+            android:title="@string/heads_up_notifications"
+            android:summary="@string/heads_up_notifications_summary"
+            android:defaultValue="true" />                    
 </PreferenceScreen>

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 crDroid Android Project
+ * Copyright (C) 2014 The Nitrogen Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,42 +18,31 @@ package com.hycon.settings.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ContentResolver;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.database.ContentObserver;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.UserHandle;
-import android.provider.Settings;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceGroup;
+import androidx.preference.PreferenceScreen;
+import androidx.preference.PreferenceViewHolder;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewGroup; 
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-
-import androidx.preference.ListPreference;
-import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceScreen;
-import androidx.preference.SwitchPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 import com.android.settings.R;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
-
 import com.android.settings.custom.preference.PackageListAdapter;
 import com.android.settings.custom.preference.PackageListAdapter.PackageItem;
+import android.provider.Settings;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,49 +50,46 @@ import java.util.List;
 import java.util.Map;
 
 @SearchIndexable
-public class GamingMode extends SettingsPreferenceFragment
+public class HeadsUp extends SettingsPreferenceFragment
         implements Preference.OnPreferenceClickListener {
 
-    private static final int DIALOG_GAMING_APPS = 1;
-    private static final String GAMING_MODE_HW_KEYS = "gaming_mode_hw_keys_toggle";
-
-    private SwitchPreference mHardwareKeysDisable;
+    private static final int DIALOG_STOPLIST_APPS = 0;
+    private static final int DIALOG_BLACKLIST_APPS = 1;
 
     private PackageListAdapter mPackageAdapter;
     private PackageManager mPackageManager;
-    private PreferenceGroup mGamingPrefList;
-    private Preference mAddGamingPref;
+    private PreferenceGroup mStoplistPrefList;
+    private PreferenceGroup mBlacklistPrefList;
+    private Preference mAddStoplistPref;
+    private Preference mAddBlacklistPref;
 
-    private String mGamingPackageList;
-    private Map<String, Package> mGamingPackages;
-    private Context mContext;
+    private String mStoplistPackageList;
+    private String mBlacklistPackageList;
+    private Map<String, Package> mStoplistPackages;
+    private Map<String, Package> mBlacklistPackages;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get launch-able applications
-        addPreferencesFromResource(R.xml.gaming_mode_settings);
-
-        final PreferenceScreen prefScreen = getPreferenceScreen();
-
-        mHardwareKeysDisable = (SwitchPreference) findPreference(GAMING_MODE_HW_KEYS);
-
+        addPreferencesFromResource(R.xml.heads_up_settings);
         mPackageManager = getPackageManager();
         mPackageAdapter = new PackageListAdapter(getActivity());
 
-        mGamingPrefList = (PreferenceGroup) findPreference("gamingmode_applications");
-        mGamingPrefList.setOrderingAsAdded(false);
+        mStoplistPrefList = (PreferenceGroup) findPreference("stoplist_applications");
+        mStoplistPrefList.setOrderingAsAdded(false);
 
-        mGamingPackages = new HashMap<String, Package>();
+        mBlacklistPrefList = (PreferenceGroup) findPreference("blacklist_applications");
+        mBlacklistPrefList.setOrderingAsAdded(false);
 
-        mAddGamingPref = findPreference("add_gamingmode_packages");
+        mStoplistPackages = new HashMap<String, Package>();
+        mBlacklistPackages = new HashMap<String, Package>();
 
-        mAddGamingPref.setOnPreferenceClickListener(this);
+        mAddStoplistPref = findPreference("add_stoplist_packages");
+        mAddBlacklistPref = findPreference("add_blacklist_packages");
 
-        mContext = getActivity().getApplicationContext();
-
-        SettingsObserver observer = new SettingsObserver(new Handler(Looper.getMainLooper()));
-        observer.observe();
+        mAddStoplistPref.setOnPreferenceClickListener(this);
+        mAddBlacklistPref.setOnPreferenceClickListener(this);
     }
 
     @Override
@@ -119,7 +105,7 @@ public class GamingMode extends SettingsPreferenceFragment
 
     @Override
     public int getDialogMetricsCategory(int dialogId) {
-        if (dialogId == DIALOG_GAMING_APPS) {
+        if (dialogId == DIALOG_STOPLIST_APPS || dialogId == DIALOG_BLACKLIST_APPS ) {
             return MetricsProto.MetricsEvent.CUSTOM_SETTINGS;
         }
         return 0;
@@ -140,41 +126,29 @@ public class GamingMode extends SettingsPreferenceFragment
         dialog = builder.create();
 
         switch (id) {
-            case DIALOG_GAMING_APPS:
+            case DIALOG_STOPLIST_APPS:
                 list.setOnItemClickListener(new OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         // Add empty application definition, the user will be able to edit it later
                         PackageItem info = (PackageItem) parent.getItemAtPosition(position);
-                        addCustomApplicationPref(info.packageName, mGamingPackages);
+                        addCustomApplicationPref(info.packageName, mStoplistPackages);
+                        dialog.cancel();
+                    }
+                });
+                break;
+            case DIALOG_BLACKLIST_APPS:
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent,
+                            View view, int position, long id) {
+                        PackageItem info = (PackageItem) parent.getItemAtPosition(position);
+                        addCustomApplicationPref(info.packageName, mBlacklistPackages);
                         dialog.cancel();
                     }
                 });
         }
         return dialog;
-    }
-
-    class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            ContentResolver resolver = mContext.getContentResolver();
-
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.GAMING_MODE_ACTIVE), false, this,
-                    UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange, Uri uri) {
-            if (uri.equals(Settings.System.getUriFor(
-                                   Settings.System.GAMING_MODE_ACTIVE))) {
-                boolean enable = Settings.System.getInt(mContext.getContentResolver(),
-                    Settings.System.GAMING_MODE_ACTIVE, 0) == 1;
-            }
-        }
     }
 
     /**
@@ -217,29 +191,43 @@ public class GamingMode extends SettingsPreferenceFragment
         }
 
         // Add the Application Preferences
-        if (mGamingPrefList != null) {
-            mGamingPrefList.removeAll();
+        if (mStoplistPrefList != null && mBlacklistPrefList != null) {
+            mStoplistPrefList.removeAll();
+            mBlacklistPrefList.removeAll();
 
-            for (Package pkg : mGamingPackages.values()) {
+            for (Package pkg : mStoplistPackages.values()) {
                 try {
                     Preference pref = createPreferenceFromInfo(pkg);
-                    mGamingPrefList.addPreference(pref);
+                    mStoplistPrefList.addPreference(pref);
                 } catch (PackageManager.NameNotFoundException e) {
                     // Do nothing
                 }
             }
 
+            for (Package pkg : mBlacklistPackages.values()) {
+                try {
+                    Preference pref = createPreferenceFromInfo(pkg);
+                    mBlacklistPrefList.addPreference(pref);
+                } catch (PackageManager.NameNotFoundException e) {
+                    // Do nothing
+                }
+            }
+        }
+
         // Keep these at the top
-        mAddGamingPref.setOrder(0);
+        mAddStoplistPref.setOrder(0);
+        mAddBlacklistPref.setOrder(0);
         // Add 'add' options
-        mGamingPrefList.addPreference(mAddGamingPref);
-    }
+        mStoplistPrefList.addPreference(mAddStoplistPref);
+        mBlacklistPrefList.addPreference(mAddBlacklistPref);
     }
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
-        if (preference == mAddGamingPref) {
-            showDialog(DIALOG_GAMING_APPS);
+        if (preference == mAddStoplistPref) {
+            showDialog(DIALOG_STOPLIST_APPS);
+        } else if (preference == mAddBlacklistPref) {
+            showDialog(DIALOG_BLACKLIST_APPS);
         } else {
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.dialog_delete_title)
@@ -248,19 +236,21 @@ public class GamingMode extends SettingsPreferenceFragment
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            if (preference == mGamingPrefList.findPreference(preference.getKey())) {
-                                removeApplicationPref(preference.getKey(), mGamingPackages);
+                            if (preference == mBlacklistPrefList.findPreference(preference.getKey())) {
+                                 removeApplicationPref(preference.getKey(), mBlacklistPackages);
+                            } else if (preference == mStoplistPrefList.findPreference(preference.getKey())) {
+                                removeApplicationPref(preference.getKey(), mStoplistPackages);
                             }
                         }
                     })
                     .setNegativeButton(android.R.string.cancel, null);
 
-            builder.show();
+        builder.show();
         }
         return true;
     }
 
-    private void addCustomApplicationPref(String packageName, Map<String,Package> map) {
+     private void addCustomApplicationPref(String packageName, Map<String,Package> map) {
         Package pkg = map.get(packageName);
         if (pkg == null) {
             pkg = new Package(packageName);
@@ -295,13 +285,22 @@ public class GamingMode extends SettingsPreferenceFragment
     private boolean parsePackageList() {
         boolean parsed = false;
 
-        final String gamingModeString = Settings.System.getString(getContentResolver(),
-                Settings.System.GAMING_MODE_VALUES);
+        final String stoplistString = Settings.System.getString(getContentResolver(),
+                Settings.System.HEADS_UP_STOPLIST_VALUES);
+        final String blacklistString = Settings.System.getString(getContentResolver(),
+                Settings.System.HEADS_UP_BLACKLIST_VALUES);
 
-        if (!TextUtils.equals(mGamingPackageList, gamingModeString)) {
-            mGamingPackageList = gamingModeString;
-            mGamingPackages.clear();
-            parseAndAddToMap(gamingModeString, mGamingPackages);
+        if (!TextUtils.equals(mStoplistPackageList, stoplistString)) {
+            mStoplistPackageList = stoplistString;
+            mStoplistPackages.clear();
+            parseAndAddToMap(stoplistString, mStoplistPackages);
+            parsed = true;
+        }
+
+        if (!TextUtils.equals(mBlacklistPackageList, blacklistString)) {
+            mBlacklistPackageList = blacklistString;
+            mBlacklistPackages.clear();
+            parseAndAddToMap(blacklistString, mBlacklistPackages);
             parsed = true;
         }
 
@@ -325,7 +324,9 @@ public class GamingMode extends SettingsPreferenceFragment
 
 
     private void savePackageList(boolean preferencesUpdated, Map<String,Package> map) {
-        String setting = map == mGamingPackages ? Settings.System.GAMING_MODE_VALUES : Settings.System.GAMING_MODE_DUMMY;
+        String setting = map == mStoplistPackages
+                ? Settings.System.HEADS_UP_STOPLIST_VALUES
+                : Settings.System.HEADS_UP_BLACKLIST_VALUES;
 
         List<String> settings = new ArrayList<String>();
         for (Package app : map.values()) {
@@ -333,8 +334,10 @@ public class GamingMode extends SettingsPreferenceFragment
         }
         final String value = TextUtils.join("|", settings);
         if (preferencesUpdated) {
-            if (TextUtils.equals(setting, Settings.System.GAMING_MODE_VALUES)) {
-                mGamingPackageList = value;
+            if (TextUtils.equals(setting, Settings.System.HEADS_UP_STOPLIST_VALUES)) {
+                mStoplistPackageList = value;
+            } else {
+                mBlacklistPackageList = value;
             }
         }
         Settings.System.putString(getContentResolver(),
@@ -342,5 +345,5 @@ public class GamingMode extends SettingsPreferenceFragment
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.gaming_mode_settings);     
+            new BaseSearchIndexProvider(R.xml.heads_up_settings);    
 }
