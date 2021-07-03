@@ -27,6 +27,12 @@
         android:summaryOff="@string/qs_media_player_summary_off"
         android:defaultValue="true" />
 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="oos_qsclock"
+        android:title="@string/oos_qsclock"
+        android:summary="@string/oos_qsclock_summary"
+        android:defaultValue="true" />        
+
     </PreferenceCategory>
 
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
