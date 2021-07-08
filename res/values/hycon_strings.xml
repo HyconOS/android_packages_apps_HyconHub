@@ -230,6 +230,7 @@
     <string name="volume_panel_tiled">Tiled</string>
     <string name="volume_panel_miui">MIUI Compact</string>    
     <string name="volume_panel_p404">P404</string>
+    <string name="volume_panel_ssos">ShapeShift</string>
 
     <!-- Volume Panel Plugin Values -->
     <string name="volume_panel_aosp_val" translatable="false">co.potatoproject.plugin.volume.aosp</string>
@@ -238,6 +239,7 @@
     <string name="volume_panel_tiled_val" translatable="false">co.potatoproject.plugin.volume.tiled</string>
     <string name="volume_panel_miui_val" translatable="false">co.potatoproject.plugin.volume.miui</string>
     <string name="volume_panel_p404_val" translatable="false">co.potatoproject.plugin.volume.p404</string>
+    <string name="volume_panel_ssos_val" translatable="false">co.potatoproject.plugin.volume.ssos</string>
 
     <!-- Clock style -->
     <string name="clock_style_title">Clock style</string>
