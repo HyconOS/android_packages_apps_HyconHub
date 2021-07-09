@@ -34,7 +34,14 @@
         android:title="@string/header_icons_style"
         android:summary="@string/header_icons_style_summary"
         android:defaultValue="false" />
-
+        
+    <com.android.settings.custom.preference.SystemSettingListPreference
+            android:key="qs_datausage"
+            android:title="@string/qs_datausage_title"
+            android:entries="@array/qs_datausage_entries"
+            android:entryValues="@array/qs_datausage_values"
+            android:defaultValue="1" />    
+   
     <PreferenceCategory
         android:key="qs_columns_rows_category"
         android:title="@string/qs_columns_rows_category_title">
@@ -70,7 +77,7 @@
             android:min="1"
             android:defaultValue="4"
             settings:units="" />
-
+         
       </PreferenceCategory>
 
 </PreferenceScreen>

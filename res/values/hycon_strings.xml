@@ -139,6 +139,12 @@
     <string name="qs_media_player_title">Media player</string>
     <string name="qs_media_player_summary_on">Show media player in QS\nRequires a SystemUI restart</string>
     <string name="qs_media_player_summary_off">Show media player as a notification\nRequires a SystemUI restart</string>
+    
+    <!-- QS DataUsage Toggle -->
+    <string name="qs_datausage_title">Data usage in QS Header</string>
+    <string name="qs_datausage_disabled">Disabled</string>
+    <string name="qs_datausage_daily">Daily usage</string>
+    <string name="qs_datausage_monthly">Monthly usage</string>
 
     <!-- Lock Icon -->
     <string name="lockscreen_lock_icon_title">Lock icon</string>
