@@ -486,5 +486,14 @@
 
     <!-- Qs Clock -->
     <string name="oos_qsclock">Qs clock</string>
-    <string name="oos_qsclock_summary">Display an oos like clock on qs</string>                                   
+    <string name="oos_qsclock_summary">Display an oos like clock on qs</string>
+
+    <!-- Slider Styles -->
+    <string name="slider_styles_title">Change Brightness Slider</string>
+    <string name="slider_default">Default</string>
+    <string name="slider_oos">OOS</string>
+    <string name="slider_aosp">Aosp</string>
+    <string name="slider_rui">RUI</string>
+    <string name="slider_a12">A12</string>
+
 </resources>

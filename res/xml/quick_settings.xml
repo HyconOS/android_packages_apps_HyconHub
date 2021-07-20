@@ -33,6 +33,14 @@
         android:summary="@string/oos_qsclock_summary"
         android:defaultValue="true" />        
 
+
+        <com.android.settings.custom.preference.SystemSettingListPreference
+            android:key="slider_style"
+            android:title="@string/slider_styles_title"
+            android:entries="@array/slider_styles_entries"
+            android:entryValues="@array/slider_styles_values"
+            android:defaultValue="0" />          
+
     </PreferenceCategory>
 
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
