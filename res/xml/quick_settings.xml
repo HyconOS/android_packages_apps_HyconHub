@@ -28,11 +28,16 @@
         android:defaultValue="true" />
 
     <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="artwork_media_background"
+        android:title="@string/artwork_media_background_title"
+        android:summary="@string/artwork_media_background_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
         android:key="oos_qsclock"
         android:title="@string/oos_qsclock"
         android:summary="@string/oos_qsclock_summary"
         android:defaultValue="true" />        
-
 
         <com.android.settings.custom.preference.SystemSettingListPreference
             android:key="slider_style"
