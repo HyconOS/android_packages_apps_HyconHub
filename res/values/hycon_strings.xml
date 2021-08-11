@@ -470,4 +470,9 @@
     <string name="artwork_media_background_summary">Set media artwork as notification media background</string>
     <string name="artwork_media_fade_level_title">Artwork fade level</string>
     <string name="artwork_media_fade_level_summary">Fading the media artwork image</string>
+
+    <!-- Ambient Display Swipe Gesture -->
+    <string name="ambient_swipe_title">Ambient display swipe</string>
+    <string name="ambient_swipe_summary">Enable up or down swipe on Ambient Display</string>
+
 </resources>
