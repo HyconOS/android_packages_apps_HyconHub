@@ -98,6 +98,12 @@
             android:dependency="ambient_icons_lockscreen"
             android:defaultValue="0xFFFFFFFF" />
 
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="ambient_swipe"
+            android:title="@string/ambient_swipe_title"
+            android:summary="@string/ambient_swipe_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
